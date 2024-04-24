@@ -11,7 +11,7 @@ const Projects = () => {
     }}>
       <Box>
         <h1 className='page-title'>Projects.</h1>
-        <span>If you would like to see all my projects, please download the documentation in <a href="#">here</a>.</span>
+        <span>If you would like to see all my projects, please download the documentation in <a href="/document/PORTFOLIO_GALUH.pdf">here</a>.</span>
       </Box>
       <Box
         css={{
