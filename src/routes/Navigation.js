@@ -1,64 +1,114 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import Box from '../components/Box';
+import MobileMenu from '../components/MobileMenu';
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+}
 
 const Navigation = () => {
+  const [isShowingMobileMenu, setShowingMobileMenu] = useState(false);
   const location = useLocation();
 
-
   return (
-    <Box
-      css={{
-        height: '100%',
-        maxWidth: '960px',
-        background: '#FFF',
-        position: 'relative',
-        margin: '0 auto',
-      }}
-    >
+    <Fragment>
       <Box
         css={{
-          height: 120,
-          display: 'grid',
-          gridTemplateColumns: '1fr auto auto',
-          gap: 10,
-          alignItems: 'center',
-          'ul': {
-            listStyleType: 'none',
-            margin: '0',
-            padding: '0',
-            height: 'fit-content',
+          height: '100%',
+          padding: '0 30px',
+          paddingTop: 120,
+          background: '#FFF',
+          position: 'relative',
+          margin: '0 auto',
+          '@sm': {
             display: 'flex',
-            gap: 20,
-            letterSpacing: '0.1em',
-            'li': {
-              'a': {
-                textTransform: 'uppercase',
-                fontWeight: 'bold',
-                borderBottom: 0,
-                paddingBottom: 5,
-              }
-            },
-            'li.active': {
-              'a': {
-                borderBottom: '2px solid #000'
-              }
-            }
-          }
+            maxWidth: '960px',
+          },
         }}
       >
-        <h2>
-          galuhrmdh.com
-        </h2>
-        <ul>
-          <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Home</Link></li>
-          <li className={location.pathname === '/projects' ? 'active' : ''}><Link to="/projects">Projects</Link></li>
-          <li className={location.pathname === '/blog' ? 'active' : ''}><Link to="/blog">Blog</Link></li>
-          <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact">Contact</Link></li>
-        </ul>
+        <Box
+          css={{
+            background: '#FFF',
+            top: 0,
+            left: 0,
+            position: 'fixed',
+            width: '100%',
+            height: 120,
+            display: 'flex',
+            justifyContent: 'center',
+            '.nav-container': {
+              width: '100%',
+              maxWidth: '960px',
+              display: 'grid',
+              gridTemplateColumns: '1fr auto auto',
+              gap: 10,
+              alignItems: 'center',
+            },
+            '.logo': {
+              marginLeft: 30,
+              '@lg': {
+                marginLeft: 0
+              }
+            },
+            'button': {
+              background: 'transparent',
+              outline: 'none',
+              boxShadow: 'none',
+              border: 0,
+              marginRight: 10,
+              color: '#000',
+              '@sm': {
+                display: 'none',
+              },
+            },
+            'ul': {
+              display: 'none',
+              listStyleType: 'none',
+              margin: '0',
+              padding: '0',
+              height: 'fit-content',
+              gap: 20,
+              letterSpacing: '0.1em',
+              '@sm': {
+                display: 'flex',
+              },
+              'li': {
+                'a': {
+                  textTransform: 'uppercase',
+                  fontWeight: 'bold',
+                  borderBottom: 0,
+                  paddingBottom: 5,
+                }
+              },
+              'li.active': {
+                'a': {
+                  borderBottom: '2px solid #000'
+                }
+              }
+            }
+          }}
+        >
+          <Box
+            className='nav-container'
+          >
+            <h2 className='logo'>
+              galuhrmdh.com
+            </h2>
+            <ul>
+              <li className={location.pathname === '/' ? 'active' : ''}><Link to="/" onClick={scrollToTop}>Home</Link></li>
+              <li className={location.pathname === '/projects' ? 'active' : ''}><Link to="/projects" onClick={scrollToTop}>Projects</Link></li>
+              <li className={location.pathname === '/blog' ? 'active' : ''}><Link to="/blog" onClick={scrollToTop}>Blog</Link></li>
+              <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
+            </ul>
+            <button type="button" onClick={() => { setShowingMobileMenu(true); }}><HamburgerMenuIcon height={36} width={36} /></button>
+          </Box>
+        </Box>
+        <Outlet />
       </Box>
-      <Outlet />
-    </Box>
+      {isShowingMobileMenu && <MobileMenu onClick={() => { setShowingMobileMenu(false); }} {...{ scrollToTop }} />}
+    </Fragment>
   )
 }
 

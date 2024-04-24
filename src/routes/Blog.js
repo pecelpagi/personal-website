@@ -39,6 +39,7 @@ const Blog = () => {
             fontSize: '1em'
           },
           'a': {
+            lineHeight: '2em',
             fontSize: '1.5em'
           }
         }}

@@ -18,7 +18,10 @@ const Projects = () => {
           marginTop: '2em',
           display: 'grid',
           gap: 25,
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: '1fr',
+          '@sm':  {
+            gridTemplateColumns: '1fr 1fr',
+          },
           '.project': {
             display: 'flex',
             flexDirection: 'column',
