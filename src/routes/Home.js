@@ -57,8 +57,8 @@ const Home = () => {
           },
         }}
       >
-        <a className='download-button' href="/document/CV_GALUH.pdf">Download CV</a>
-        <a className='download-button' href="/document/PORTFOLIO_GALUH.pdf">Download Portfolio</a>
+        <a href="/document/CV_GALUH.pdf">Download Résumé</a>
+        <a href="/document/PORTFOLIO_GALUH.pdf">Download Portfolio</a>
       </Box>
     </Box>
   )

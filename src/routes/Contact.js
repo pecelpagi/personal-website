@@ -27,7 +27,6 @@ const Contact = () => {
         <li><Box>LinkedIn:</Box><a href="https://www.linkedin.com/in/galuhrmdh" target='_blank' rel="noreferrer">https://www.linkedin.com/in/galuhrmdh</a></li>
         <li><Box>GitHub:</Box><a href="https://github.com/pecelpagi" target='_blank' rel="noreferrer">https://github.com/pecelpagi</a></li>
         <li><Box>Instagram:</Box><a href="https://www.instagram.com/pecelpagi_" target='_blank' rel="noreferrer">https://www.instagram.com/pecelpagi_</a></li>
-        <li><Box>Strava:</Box><a href="https://www.strava.com/athletes/125012491" target='_blank' rel="noreferrer">https://www.strava.com/athletes/125012491</a></li>
       </ul>
     </Box>
   )

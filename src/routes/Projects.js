@@ -46,10 +46,14 @@ const Projects = () => {
             display: 'grid',
             gap: 25,
             gridTemplateColumns: '1fr',
+            'img.absolute': {
+              visibility: 'hidden',
+            },
             '@sm': {
               gridTemplateColumns: '1fr 1fr',
             },
             '.project': {
+              position: 'relative',
               display: 'flex',
               flexDirection: 'column',
               gap: 20,
@@ -63,22 +67,24 @@ const Projects = () => {
                 flex: '1 1 0px',
               },
               padding: 25,
-              border: '1px solid #d6dbe6',
+              border: '1px solid #FFF',
               '.preview': {
-                marginTop: 20,
-                border: '2px solid #000',
-                padding: '10px 15px',
-                borderRadius: 0,
-                height: 'fit-content',
-                fontSize: 14,
+                textDecoration: 'none',
+                color: '#FFF',
+                fontWeight: '600',
+                paddingBottom: '0px',
+                borderBottom: '2px solid #FFF',
                 width: 'fit-content'
               },
               '&:hover': {
-                border: '1px solid #000',
+                border: '1px solid #FFF',
+                background: '#FFF',
+                color: '#000',
                 cursor: 'pointer',
                 '.preview': {
-                  background: '#000',
-                  color: '#FFF',
+                  background: '#FFF',
+                  color: '#000',
+                  borderBottom: '2px solid #000',
                 }
               },
             }
@@ -92,6 +98,7 @@ const Projects = () => {
             <div className='preview'>
               Preview
             </div>
+            <img className='absolute' src={previewData.dashboard.image} height={10} />
           </Box>
           <Box className='project' onClick={() => { handlePreview('cockpit'); }}>
             <h1>Majoo Internal Dashboard Web Application</h1>
@@ -101,6 +108,7 @@ const Projects = () => {
             <div className='preview'>
               Preview
             </div>
+            <img className='absolute' src={previewData.cockpit.image} height={10} />
           </Box>
           <Box className='project' onClick={() => { handlePreview('laundria'); }}>
             <h1>Laundria</h1>
@@ -110,6 +118,7 @@ const Projects = () => {
             <div className='preview'>
               Preview
             </div>
+            <img className='absolute' src={previewData.laundria.image} height={10} />
           </Box>
           <Box className='project' onClick={() => { handlePreview('simpeg'); }}>
             <h1>SIMPEG</h1>
@@ -119,6 +128,7 @@ const Projects = () => {
             <div className='preview'>
               Preview
             </div>
+            <img className='absolute' src={previewData.simpeg.image} height={10} />
           </Box>
         </Box>
       </Box>

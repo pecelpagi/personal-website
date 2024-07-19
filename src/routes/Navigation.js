@@ -19,18 +19,16 @@ const Navigation = () => {
           height: '100%',
           padding: '0 30px',
           paddingTop: 120,
-          background: '#FFF',
           position: 'relative',
           margin: '0 auto',
           '@sm': {
             display: 'flex',
-            maxWidth: '960px',
+            maxWidth: '700px',
           },
         }}
       >
         <Box
           css={{
-            background: '#FFF',
             top: 0,
             left: 0,
             position: 'fixed',
@@ -39,8 +37,9 @@ const Navigation = () => {
             display: 'flex',
             justifyContent: 'center',
             '.nav-container': {
+              background: '#000',
               width: '100%',
-              maxWidth: '960px',
+              maxWidth: '700px',
               display: 'grid',
               gridTemplateColumns: '1fr auto auto',
               gap: 10,
@@ -48,6 +47,7 @@ const Navigation = () => {
             },
             '.logo': {
               marginLeft: 30,
+              fontWeight: 700,
               '@lg': {
                 marginLeft: 0
               }
@@ -76,15 +76,14 @@ const Navigation = () => {
               },
               'li': {
                 'a': {
-                  textTransform: 'uppercase',
-                  fontWeight: 'bold',
+                  fontWeight: 600,
                   borderBottom: 0,
                   paddingBottom: 5,
                 }
               },
               'li.active': {
                 'a': {
-                  borderBottom: '2px solid #000'
+                  borderBottom: '2px solid #FFF'
                 }
               }
             }
