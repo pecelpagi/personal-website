@@ -42,19 +42,16 @@ const Home = () => {
       <Box
         css={{
           display: 'flex',
-          gap: 15,
+          gap: 30,
           marginTop: '1.5em',
-          '.download-button': {
-            border: '2px solid #000',
-            padding: '10px 15px',
-            borderRadius: 0,
-            height: 'fit-content',
-            fontSize: 14,
-            '&:hover': {
-              background: '#000',
-              color: '#FFF'
-            }
+          flexDirection: 'column',
+          'a': {
+            width: 'fit-content',
           },
+          '@sm': {
+            gap: 15,
+            flexDirection: 'row'
+          }
         }}
       >
         <a href="/document/CV_GALUH.pdf">Download Résumé</a>

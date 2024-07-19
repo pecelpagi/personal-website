@@ -18,8 +18,9 @@ const Navigation = () => {
         css={{
           height: '100%',
           padding: '0 30px',
-          paddingTop: 120,
           position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
           margin: '0 auto',
           '@sm': {
             display: 'flex',
@@ -31,7 +32,7 @@ const Navigation = () => {
           css={{
             top: 0,
             left: 0,
-            position: 'fixed',
+            position: 'relative',
             width: '100%',
             height: 120,
             display: 'flex',
@@ -47,11 +48,8 @@ const Navigation = () => {
               alignItems: 'center',
             },
             '.logo': {
-              marginLeft: 30,
+              marginLeft: 0,
               fontWeight: 700,
-              '@lg': {
-                marginLeft: 0
-              }
             },
             'button': {
               background: 'transparent',
@@ -93,9 +91,11 @@ const Navigation = () => {
           <Box
             className='nav-container'
           >
-            <h2 className='logo'>
-              galuhrmdh.com
-            </h2>
+            <a href='/' style={{ border: 0 }}>
+              <h2 className='logo'>
+                galuhrmdh.com
+              </h2>
+            </a>
             <ul>
               <li className={location.pathname === '/' ? 'active' : ''}><Link to="/" onClick={scrollToTop}>Home</Link></li>
               <li className={location.pathname === '/projects' ? 'active' : ''}><Link to="/projects" onClick={scrollToTop}>Projects</Link></li>
