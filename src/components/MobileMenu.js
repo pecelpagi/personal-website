@@ -24,10 +24,11 @@ const MobileMenu = ({ onClick, scrollToTop }) => {
             css={{
                 top: 0,
                 left: 0,
+                zIndex: 2,
                 position: 'fixed',
                 width: '100%',
                 height: '100%',
-                background: '#FFF',
+                background: '#000',
                 display: 'flex',
                 flexDirection: 'column',
                 'button': {
@@ -70,7 +71,7 @@ const MobileMenu = ({ onClick, scrollToTop }) => {
                     paddingTop: 20,
                 }}
             >
-                <button type="button" onClick={onClick}><Cross2Icon height={36} width={36} /></button>
+                <button type="button" onClick={onClick}><Cross2Icon color="#FFF" height={36} width={36} /></button>
             </Box>
             <Box
                 css={{

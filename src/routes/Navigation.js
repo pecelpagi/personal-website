@@ -35,6 +35,7 @@ const Navigation = () => {
             width: '100%',
             height: 120,
             display: 'flex',
+            zIndex: 1,
             justifyContent: 'center',
             '.nav-container': {
               background: '#000',
@@ -101,7 +102,7 @@ const Navigation = () => {
               <li className={location.pathname === '/blog' ? 'active' : ''}><Link to="/blog" onClick={scrollToTop}>Blog</Link></li>
               <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
             </ul>
-            <button type="button" onClick={() => { setShowingMobileMenu(true); }}><HamburgerMenuIcon height={36} width={36} /></button>
+            <button type="button" onClick={() => { setShowingMobileMenu(true); }}><HamburgerMenuIcon color="#FFF" height={36} width={36} /></button>
           </Box>
         </Box>
         <Outlet />
