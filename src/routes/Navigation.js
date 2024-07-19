@@ -43,7 +43,7 @@ const Navigation = () => {
               width: '100%',
               maxWidth: '700px',
               display: 'grid',
-              gridTemplateColumns: '1fr auto auto',
+              gridTemplateColumns: '1fr auto',
               gap: 10,
               alignItems: 'center',
             },
@@ -56,7 +56,7 @@ const Navigation = () => {
               outline: 'none',
               boxShadow: 'none',
               border: 0,
-              marginRight: 10,
+              marginRight: 0,
               color: '#000',
               '@sm': {
                 display: 'none',
